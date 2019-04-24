@@ -7,16 +7,23 @@
     android:background="@color/primaryDarkColor"
     tools:context=".PatientRegActivity">
 
-    <ImageView
-        android:id="@+id/img"
-        android:layout_above="@+id/loginCard"
-        android:transitionName="imageTransition"
-        android:src="@drawable/ic_pharmacy"
-        android:layout_width="96dp"
-        android:layout_centerInParent="true"
-        android:layout_height="96dp"
-        android:layout_margin="10dp"/>
-    <androidx.cardview.widget.CardView
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/primaryDarkColor"
+        tools:context=".PatientRegActivity">
+        <ImageView
+            android:id="@+id/img"
+            android:layout_above="@+id/loginCard"
+            android:transitionName="imageTransition"
+            android:src="@drawable/ic_pharmacy"
+            android:layout_width="96dp"
+            android:layout_centerInParent="true"
+            android:layout_height="96dp"
+            android:layout_margin="10dp"/>
+        <androidx.cardview.widget.CardView
         android:id="@+id/loginCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -137,5 +144,12 @@
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressbar"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

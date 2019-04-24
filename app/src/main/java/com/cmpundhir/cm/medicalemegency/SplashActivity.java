@@ -29,7 +29,13 @@ public class SplashActivity extends AppCompatActivity {
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this,img,"imageTransition");
                 Intent intent = new Intent(SplashActivity.this,LoginActivity.class);
                 startActivity(intent,options.toBundle());
-                finish();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        finish();
+                    }
+                },2000);
+
             }
         },3000);
     }
