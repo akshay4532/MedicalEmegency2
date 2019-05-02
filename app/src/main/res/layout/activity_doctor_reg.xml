@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:background="@color/primaryDarkColor"
     android:layout_height="match_parent"
-    tools:context=".DoctorRegActivity">
+    tools:context=".DoctorRegActivity"
+    android:id="@+id/rel_layout">
 
     <ImageView
         android:id="@+id/img"
@@ -16,13 +17,14 @@
         android:layout_centerInParent="true"
         android:layout_height="96dp"
         android:layout_margin="10dp"/>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/loginCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"
         app:cardElevation="5dp"
-
+        android:padding="5dp"
         android:layout_centerInParent="true"
         app:cardUseCompatPadding="true">
         <LinearLayout
@@ -32,14 +34,19 @@
             android:layout_margin="10dp"
             android:padding="10dp">
             <TextView
-                android:layout_margin="20dp"
+                android:layout_margin="2dp"
                 android:textColor="@color/primaryDarkColor"
                 android:textStyle="bold"
                 android:textSize="24sp"
-                android:layout_gravity="center"
-                android:text="Doctor Register"
+                android:text="Doctor Registration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+            <View
+                android:layout_marginTop="3dp"
+                android:background="#0D293E"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -140,11 +147,19 @@
             <Button
                 android:textColor="#fff"
                 android:backgroundTint="@color/primaryDarkColor"
-                android:id="@+id/button2"
+                android:id="@+id/reg_btn"
                 android:text="Register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
+
         </LinearLayout>
+
     </androidx.cardview.widget.CardView>
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressbar"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>

@@ -35,21 +35,17 @@ public class LoginActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
     }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        finish();
-        overridePendingTransition(0, 0);
-    }
+//
+//    @Override
+//    public void onBackPressed() {
+//        super.onBackPressed();
+//        finish();
+//        overridePendingTransition(0, 0);
+//    }
 
     @OnClick(R.id.button)
     public void onLogin(View view){
 
-    }
-    @OnClick(R.id.button2)
-    public void onRegister(View view){
-        startActivity(new Intent(LoginActivity.this,RegistrationChoiceActivity.class));
     }
 
     public void signIn(String email,String password){

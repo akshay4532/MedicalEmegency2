@@ -12,11 +12,13 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.cmpundhir.cm.medicalemegency.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -44,10 +46,14 @@ public class PatientRegActivity extends AppCompatActivity {
     @BindView(R.id.mob)
     TextInputEditText mob;
     private FirebaseAuth mAuth;
+    @BindView(R.id.rel_layout_patient)
+    RelativeLayout relativeLayout;
+
     Button btn;
     ProgressBar progressbar;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("users");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +61,6 @@ public class PatientRegActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
-
         btn = findViewById(R.id.button2);
         progressbar = findViewById(R.id.progressbar);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -117,8 +122,7 @@ public class PatientRegActivity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                            Toast.makeText(PatientRegActivity.this, "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                           Snackbar.make(relativeLayout,"You already Register",Snackbar.LENGTH_LONG).setAction("ok",null).show();
                             progressbar.setVisibility(View.GONE);
                         }
 
@@ -164,8 +168,8 @@ public class PatientRegActivity extends AppCompatActivity {
         user.setUserId(userId);
         user.setUserGender(gender);
         user.setUserPhone(mob);
-        user.setUserType("1");
-        user.setStatus("1");
+        user.setUserType("0");
+        user.setStatus("0");
         myRef.child(firebaseUser.getUid()).setValue(user);
     }
 }

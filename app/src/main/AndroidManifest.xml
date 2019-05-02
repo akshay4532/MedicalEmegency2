@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.cmpundhir.cm.medicalemegency">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,9 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".doctor.DoctorDetailsFormActivity"></activity>
+        <activity android:name=".LoginChoiceActivity"></activity>
+        <activity android:name=".patient.PatientDetailsForm" />
+        <activity android:name=".doctor.DoctorDetailsFormActivity" />
         <activity android:name=".DoctorRegActivity" />
-
         <activity android:name=".doctor.DoctorActivity" />
         <activity android:name=".PatientRegActivity" />
         <activity android:name=".RegistrationChoiceActivity" />
