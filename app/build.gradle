@@ -34,4 +34,8 @@ dependencies {
 
     implementation 'com.jakewharton:butterknife:8.3.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.3.0'
+    implementation 'com.chootdev:blurimg:1.0.1'
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.16'
+
 }

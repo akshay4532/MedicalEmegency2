@@ -8,4 +8,9 @@
     <color name="primaryLightColor">#58a5f0</color>
     <color name="primaryDarkColor">#004c8c</color>
     <color name="primaryTextColor">#ffffff</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="gradStart">#19AA8B</color>
+    <color name="gradStop">#23A7D8</color>
 </resources>
