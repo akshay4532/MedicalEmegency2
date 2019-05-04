@@ -1,43 +1,50 @@
-package com.cmpundhir.cm.medicalemegency.patient;
+package com.cmpundhir.cm.medicalemegency.doctor;
 
-import android.content.Intent;
 import android.os.Bundle;
 
-import com.cmpundhir.cm.medicalemegency.LoginChoiceActivity;
-import com.cmpundhir.cm.medicalemegency.SplashActivity;
-import com.cmpundhir.cm.medicalemegency.utils.Prefs;
+import com.cmpundhir.cm.medicalemegency.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+
 import android.view.View;
+
 import androidx.core.view.GravityCompat;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+
 import android.view.MenuItem;
+
 import com.google.android.material.navigation.NavigationView;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
 import android.view.Menu;
 
-import com.cmpundhir.cm.medicalemegency.R;
-
-public class PatientHomeActivity extends AppCompatActivity
+public class DoctorHome2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient_home);
+        setContentView(R.layout.activity_doctor_home2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
-        Prefs.init(this);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -54,7 +61,7 @@ public class PatientHomeActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.doctor_home2, menu);
         return true;
     }
 
@@ -90,11 +97,7 @@ public class PatientHomeActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
-            Prefs.setAuth(false);
-            Prefs.commit();
-            Intent intent = new Intent(PatientHomeActivity.this, LoginChoiceActivity.class);
-            startActivity(intent);
-            finish();
+
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.ImageView;
 
+import com.cmpundhir.cm.medicalemegency.doctor.DoctorHome2Activity;
+import com.cmpundhir.cm.medicalemegency.patient.PatientHomeActivity;
+import com.cmpundhir.cm.medicalemegency.utils.Prefs;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -21,20 +25,36 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
         getSupportActionBar().hide();
         ButterKnife.bind(this);
-
+        Prefs.init(this);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this,img,"imageTransition");
-                Intent intent = new Intent(SplashActivity.this,LoginChoiceActivity.class);
-                startActivity(intent,options.toBundle());
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        finish();
+                if(Prefs.getAuth()){
+                    Intent intent = null;
+                    switch (Prefs.getUserType()){
+                        case 1:
+                            Prefs.setUserType(1);
+                            intent = new Intent(SplashActivity.this, PatientHomeActivity.class);
+                            break;
+                        case 2:
+                            Prefs.setUserType(2);
+                            intent = new Intent(SplashActivity.this, DoctorHome2Activity.class);
+                            break;
                     }
-                },1000);
+                    startActivity(intent);
+                    finish();
+                }else {
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this, img, "imageTransition");
+                    Intent intent = new Intent(SplashActivity.this, LoginChoiceActivity.class);
+                    startActivity(intent, options.toBundle());
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            finish();
+                            overridePendingTransition(0,0);
+                        }
+                    }, 1000);
+                }
 
             }
         },3000);

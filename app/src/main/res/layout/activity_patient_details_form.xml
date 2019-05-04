@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".doctor.DoctorDetailsFormActivity">
+    tools:context=".PatientDetailsFormActivity">
 
     <ImageView
         android:id="@+id/img"
@@ -115,6 +115,15 @@
                     </RadioGroup>
 
                 </LinearLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/no."
+                        android:hint="Mobile No.  "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -149,13 +158,50 @@
                         android:text="Pick DOB " />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marital Status"
+                        android:textSize="18dp"
+                        android:layout_gravity="center_vertical"/>
+                    <RadioGroup
+                        android:id="@+id/marry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="9dp">
+                        <RadioButton
+                            android:id="@+id/sin"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Single"/>
+                        <RadioButton
+                            android:id="@+id/mary"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Married"/>
+                        <RadioButton
+                            android:id="@+id/div"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="divorced"/>
+
+
+                    </RadioGroup>
+
+                </LinearLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/lang1"
-                        android:hint="Enter Language 1"
+                        android:id="@+id/Nation"
+                        android:hint="Nationality"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -167,7 +213,76 @@
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/lang2"
-                        android:hint="Enter Language 2 "
+                        android:hint="Language Spoken "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/dad"
+                        android:hint="Father's Name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/mom"
+                        android:hint="Mother's Name "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/past"
+                        android:hint="Past Medical History  "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/blood"
+                        android:hint="Blood Group "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/heigh"
+                        android:hint="Height "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/weigh"
+                        android:hint="Weight  "
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/notes"
+                        android:hint="Clinical Notes  "
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -175,7 +290,7 @@
                     android:textColor="@color/primaryDarkColor"
                     android:textStyle="bold"
                     android:textSize="18sp"
-                    android:text="Professional Details *"
+                    android:text="Address *"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
@@ -193,7 +308,7 @@
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/instituteEdit"
-                            android:hint="Enter Institute Name  "
+                            android:hint="Flat No. And BLDG. Name  "
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -203,7 +318,7 @@
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/internEdit"
-                            android:hint="Enter Internship Details  "
+                            android:hint="Road No./Name  "
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -212,8 +327,48 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/instituteEdit5"
-                            android:hint="Enter Institute Name  "
+                            android:id="@+id/Locality"
+                            android:hint="Area / Locality "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/city"
+                            android:hint="City "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/STATE"
+                            android:hint="State"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/COUNTRY"
+                            android:hint="Country "
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/PINCODE"
+                            android:hint="Pin Code"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>

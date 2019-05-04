@@ -4,7 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -15,7 +17,10 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.cmpundhir.cm.medicalemegency.doctor.DoctorDetailsFormActivity;
 import com.cmpundhir.cm.medicalemegency.model.User;
+import com.cmpundhir.cm.medicalemegency.patient.PatientDetailsForm;
+import com.cmpundhir.cm.medicalemegency.utils.DatabaseStatus;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -52,7 +57,7 @@ public class PatientRegActivity extends AppCompatActivity {
     Button btn;
     ProgressBar progressbar;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("users");
+    DatabaseReference myRef = database.getReference("patients");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +67,7 @@ public class PatientRegActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
         btn = findViewById(R.id.button2);
+
         progressbar = findViewById(R.id.progressbar);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +106,14 @@ public class PatientRegActivity extends AppCompatActivity {
                     pass.setError("Please enter a strong password");
                     return;
                 }
+                Handler handler=new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(PatientRegActivity.this, PatientDetailsForm.class));
+                    }
+                },1000);
+
                 regPateint(email,pss,name,genderr,phone);
             }
         });
@@ -122,7 +136,7 @@ public class PatientRegActivity extends AppCompatActivity {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                           Snackbar.make(relativeLayout,"You already Register",Snackbar.LENGTH_LONG).setAction("ok",null).show();
+                           Snackbar.make(relativeLayout,task.getException().getMessage(),Snackbar.LENGTH_LONG).setAction("ok",null).show();
                             progressbar.setVisibility(View.GONE);
                         }
 
@@ -168,8 +182,8 @@ public class PatientRegActivity extends AppCompatActivity {
         user.setUserId(userId);
         user.setUserGender(gender);
         user.setUserPhone(mob);
-        user.setUserType("0");
-        user.setStatus("0");
+        user.setUserType(DatabaseStatus.USER_TYPE_PATIENT+"");
+        user.setStatus(DatabaseStatus.ACTIVE_STATUS+"");
         myRef.child(firebaseUser.getUid()).setValue(user);
     }
 }

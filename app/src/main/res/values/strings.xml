@@ -37,4 +37,9 @@
         <item>Urology</item>
         <item>Veterinary Medicine</item>
     </array>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_doctor_home2">DoctorHome2Activity</string>
 </resources>

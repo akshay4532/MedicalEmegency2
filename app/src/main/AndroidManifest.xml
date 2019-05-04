@@ -13,7 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".LoginChoiceActivity"></activity>
+        <activity
+            android:name=".doctor.DoctorHome2Activity"
+            android:label="@string/title_activity_doctor_home2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".LoginChoiceActivity" />
         <activity android:name=".patient.PatientDetailsForm" />
         <activity android:name=".doctor.DoctorDetailsFormActivity" />
         <activity android:name=".DoctorRegActivity" />

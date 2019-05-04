@@ -7,6 +7,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 
 import com.cmpundhir.cm.medicalemegency.doctor.DoctorDetailsFormActivity;
 import com.cmpundhir.cm.medicalemegency.model.User;
+import com.cmpundhir.cm.medicalemegency.utils.DatabaseStatus;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
@@ -56,7 +58,7 @@ public class DoctorRegActivity extends AppCompatActivity {
     Button btn;
     ProgressBar progressbar;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("Doctor_Reg");
+    DatabaseReference myRef = database.getReference("doctors");
     RelativeLayout relativeLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +108,14 @@ public class DoctorRegActivity extends AppCompatActivity {
                     pass.setError("Please enter a strong password");
                     return;
                 }
+                Handler handler=new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        startActivity(new Intent(DoctorRegActivity.this,DoctorDetailsFormActivity.class));
+                    }
+                },1000);
+
                regPateint(email,pss,name,genderr,phone);
             }
         });
@@ -121,17 +131,19 @@ public class DoctorRegActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            verifyEMmail(user);
+                            verifyEmail(user);
                             updateDetails(user,fname.getText().toString()+" "+lname.getText().toString());
                             progressbar.setVisibility(View.GONE);
                             addToDatabse(user,name,email,user.getUid(),gender,mob);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
-
-                            Snackbar.make(relativeLayout,"You already Register",Snackbar.LENGTH_LONG).setAction("ok",null).show();
+                            Toast.makeText(DoctorRegActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Snackbar.make(relativeLayout,task.getException().getMessage(),Snackbar.LENGTH_LONG).setAction("ok",null).show();
                             progressbar.setVisibility(View.GONE);
                         }
+
+
 
 
                     }
@@ -154,7 +166,7 @@ public class DoctorRegActivity extends AppCompatActivity {
                 });
     }
 
-    public void verifyEMmail(FirebaseUser user){
+    public void verifyEmail(FirebaseUser user){
         user.sendEmailVerification()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
@@ -175,8 +187,8 @@ public class DoctorRegActivity extends AppCompatActivity {
         user.setUserId(userId);
         user.setUserGender(gender);
         user.setUserPhone(mob);
-        user.setUserType("1");
-        user.setStatus("1");
+        user.setUserType(DatabaseStatus.USER_TYPE_DOCTOR+"");
+        user.setStatus(DatabaseStatus.ACTIVE_STATUS+"");
         myRef.child(firebaseUser.getUid()).setValue(user);
     }
 }

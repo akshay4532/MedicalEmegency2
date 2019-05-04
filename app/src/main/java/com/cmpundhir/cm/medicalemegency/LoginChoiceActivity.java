@@ -12,6 +12,7 @@ import android.widget.ImageView;
 
 import com.cmpundhir.cm.medicalemegency.R;
 import com.cmpundhir.cm.medicalemegency.model.User;
+import com.cmpundhir.cm.medicalemegency.utils.DatabaseStatus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,48 +40,14 @@ public class LoginChoiceActivity extends AppCompatActivity {
     @OnClick(R.id.patient_log)
     public void loginAsPatient(View view){
        Intent intent=new Intent(this,LoginActivity.class);
-       intent.putExtra("typePatienr",0);
+       intent.putExtra("type", DatabaseStatus.USER_TYPE_PATIENT);
        startActivity(intent);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginChoiceActivity.this,img,"imageTransition");
-                Intent intent = new Intent(LoginChoiceActivity.this,LoginActivity.class);
-                startActivity(intent,options.toBundle());
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                     //   finish();
-                    }
-                },1000);
-
-            }
-        },30);
-
     }
     @OnClick(R.id.doctor_log)
     public void loginAsDoctor(View view){
         Intent intent=new Intent(this,LoginActivity.class);
-        intent.putExtra("typeDoctor",1);
+        intent.putExtra("type", DatabaseStatus.USER_TYPE_DOCTOR);
         startActivity(intent);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(LoginChoiceActivity.this,img,"imageTransition");
-                Intent intent = new Intent(LoginChoiceActivity.this,LoginActivity.class);
-                startActivity(intent,options.toBundle());
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        //finish();
-                    }
-                },1000);
-
-            }
-        },30);
-
     }
     @OnClick(R.id.sign_up)
     public void Signup(View view){
