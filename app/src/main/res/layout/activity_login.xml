@@ -6,15 +6,24 @@
     android:layout_height="match_parent"
     android:background="#3A819B"
     tools:context=".LoginActivity">
-    <ImageView
-        android:id="@+id/img"
-        android:layout_above="@+id/loginCard"
-        android:transitionName="imageTransition"
-        android:src="@drawable/ic_pharmacy"
-        android:layout_width="96dp"
-        android:layout_centerInParent="true"
-        android:layout_height="96dp"
-        android:layout_margin="10dp"/>
+
+
+    <RelativeLayout
+        android:layout_marginTop="142dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_marginHorizontal="150dp"
+            android:id="@+id/img"
+            android:transitionName="imageTransition"
+            android:src="@drawable/ic_pharmacy"
+            android:layout_width="96dp"
+            android:layout_centerInParent="true"
+            android:layout_height="96dp"
+            android:layout_margin="10dp"/>
+    </RelativeLayout>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/loginCard"
         android:layout_width="match_parent"
@@ -23,12 +32,17 @@
         app:cardElevation="5dp"
         android:layout_centerInParent="true"
         app:cardUseCompatPadding="true">
+
+
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:padding="10dp">
+
+
             <TextView
 
                 android:textColor="@color/primaryDarkColor"

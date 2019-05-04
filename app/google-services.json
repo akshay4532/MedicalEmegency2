@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "514912056759",
+    "firebase_url": "https://medicalemegency-39582.firebaseio.com",
+    "project_id": "medicalemegency-39582",
+    "storage_bucket": "medicalemegency-39582.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514912056759:android:2ec7dbd0e9bf93d1",
+        "android_client_info": {
+          "package_name": "com.cmpundhir.cm.medicalemegency"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514912056759-6vsl6r2qpj5lcneakg0udfd6efnc52tb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.cmpundhir.cm.medicalemegency",
+            "certificate_hash": "065edb2941693c433ba27548464abdcafab9c9c6"
+          }
+        },
+        {
+          "client_id": "514912056759-9ag0rj1ntd7i01hvsi3doif3chia8fa6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHJrIDw5R1pahLO04zlNfLyuaLWv0j9_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514912056759-9ag0rj1ntd7i01hvsi3doif3chia8fa6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
