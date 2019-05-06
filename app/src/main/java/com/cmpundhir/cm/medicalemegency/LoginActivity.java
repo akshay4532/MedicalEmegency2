@@ -68,7 +68,7 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
         if(TextUtils.isEmpty(pass)){
-            passwordEdit.setError("Please enter a  password");
+            passwordEdit.setError("Please Enter Password");
             return;
         }
 //        if(email==Prefs.getEmail()| pass==Prefs.getPassword()){
@@ -77,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
 //        else{
 //            Snackbar.make(relativeLayout,"You Entered Wrong Password ",Snackbar.LENGTH_LONG).setAction("ok",null).show();
 //        }
+
         signIn(email,pass);
 
     }
@@ -128,15 +129,21 @@ public class LoginActivity extends AppCompatActivity {
                     case 1:
                         Prefs.setUserType(1);
                         intent = new Intent(LoginActivity.this, PatientHomeActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                         break;
                     case 2:
                         Prefs.setUserType(2);
                         intent = new Intent(LoginActivity.this, DoctorHome2Activity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
                         break;
                 }
                 Prefs.commit();
-                startActivity(intent);
+
                 Toast.makeText(LoginActivity.this, Prefs.getUserName(), Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+                finish();
             }
 
             @Override

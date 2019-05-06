@@ -9,19 +9,18 @@
 
 
     <RelativeLayout
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="115dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+
         <ImageView
-            android:layout_marginHorizontal="150dp"
             android:id="@+id/img"
-            android:transitionName="imageTransition"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginHorizontal="150dp"
             android:src="@drawable/ic_pharmacy"
-            android:layout_width="96dp"
-            android:layout_centerInParent="true"
-            android:layout_height="96dp"
-            android:layout_margin="10dp"/>
+            android:transitionName="imageTransition" />
     </RelativeLayout>
 
     <androidx.cardview.widget.CardView
@@ -55,7 +54,8 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -66,12 +66,14 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
+                    android:inputType="textPassword"
                     android:id="@+id/pass"/>
             </com.google.android.material.textfield.TextInputLayout>
 

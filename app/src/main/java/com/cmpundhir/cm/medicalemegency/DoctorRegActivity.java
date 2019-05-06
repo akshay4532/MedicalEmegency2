@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -94,6 +95,10 @@ public class DoctorRegActivity extends AppCompatActivity {
                     emailEdit.setError("Please enter your email");
                     return;
                 }
+                if(!isValidEmail(email)){
+                    emailEdit.setError("Please enter valid email id");
+                    return;
+                }
 
                 if(TextUtils.isEmpty(genderr)){
                     gender.requestFocus();
@@ -108,14 +113,6 @@ public class DoctorRegActivity extends AppCompatActivity {
                     pass.setError("Please enter a strong password");
                     return;
                 }
-                Handler handler=new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        startActivity(new Intent(DoctorRegActivity.this,DoctorDetailsFormActivity.class));
-                    }
-                },1000);
-
                regPateint(email,pss,name,genderr,phone);
             }
         });
@@ -134,7 +131,7 @@ public class DoctorRegActivity extends AppCompatActivity {
                             verifyEmail(user);
                             updateDetails(user,fname.getText().toString()+" "+lname.getText().toString());
                             progressbar.setVisibility(View.GONE);
-                            addToDatabse(user,name,email,user.getUid(),gender,mob);
+                            addToDatabse(user,name,email,user.getUid(),gender,mob,password);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -180,15 +177,20 @@ public class DoctorRegActivity extends AppCompatActivity {
                 });
     }
 
-    public void addToDatabse(FirebaseUser firebaseUser,String name,String email,String userId,String gender,String mob){
+    public void addToDatabse(FirebaseUser firebaseUser,String name,String email,String userId,String gender,String mob,String password){
         User user = new User();
         user.setUserName(name);
         user.setUserEmail(email);
         user.setUserId(userId);
         user.setUserGender(gender);
+        user.setUserPass(password);
         user.setUserPhone(mob);
         user.setUserType(DatabaseStatus.USER_TYPE_DOCTOR+"");
         user.setStatus(DatabaseStatus.ACTIVE_STATUS+"");
         myRef.child(firebaseUser.getUid()).setValue(user);
+        startActivity(new Intent(DoctorRegActivity.this,DoctorDetailsFormActivity.class));
+    }
+    public static boolean isValidEmail(CharSequence target) {
+        return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
 }

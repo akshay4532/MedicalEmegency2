@@ -114,6 +114,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
                     android:hint="Email"
                     android:id="@+id/email"/>
             </com.google.android.material.textfield.TextInputLayout>
@@ -125,16 +126,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Mobile Number"
+                    android:inputType="phone"
                     android:id="@+id/mob"/>
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
+                    android:hint="Create Password"
+                    android:inputType="textPassword"
                     android:id="@+id/pass"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -142,7 +146,7 @@
             <Button
                 android:textColor="#fff"
                 android:backgroundTint="@color/primaryDarkColor"
-                android:id="@+id/button2"
+                android:id="@+id/patReg_btn"
                 android:text="Register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -153,7 +157,7 @@
 
     <ProgressBar
         android:visibility="gone"
-        android:id="@+id/progressbar"
+        android:id="@+id/progressbarPati"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

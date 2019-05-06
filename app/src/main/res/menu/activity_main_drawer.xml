@@ -5,23 +5,31 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/nav_prof"
+            android:icon="@drawable/person"
             android:title="My Profile" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="" />
+            android:id="@+id/nav_article"
+            android:icon="@drawable/artcle"
+            android:title="Health Articles" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_treatmnt"
+            android:icon="@drawable/self"
+            android:title="Self Traetment" />
         <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:id="@+id/nav_diagnsis"
+            android:icon="@drawable/diagns"
+            android:title="Diagnosis" />
     </group>
 
+    <item android:title="Medical services">
+        <menu>
+            <item
+                android:id="@+id/services"
+                android:icon="@drawable/near"
+                android:title="Services Near by" />
+        </menu>
+    </item>
     <item android:title="Communicate">
         <menu>
             <item
@@ -29,8 +37,8 @@
                 android:icon="@drawable/ic_menu_share"
                 android:title="@string/menu_share" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
+                android:id="@+id/nav_pat_logout"
+                android:icon="@drawable/logout"
                 android:title="LogOut" />
         </menu>
     </item>

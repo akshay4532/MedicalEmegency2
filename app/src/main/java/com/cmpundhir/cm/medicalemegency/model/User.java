@@ -8,6 +8,7 @@ public class User {
     private String userGender;
     private String userType;
     private String status;
+    private String userPass;
 
     public String getUserId() {
         return userId;
@@ -63,5 +64,13 @@ public class User {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String setUserPass(String userPass) {
+        return userPass;
+    }
+
+    public void getUserPass(String userPass) {
+        this.userPass = userPass;
     }
 }

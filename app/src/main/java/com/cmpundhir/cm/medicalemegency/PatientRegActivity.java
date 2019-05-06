@@ -54,7 +54,7 @@ public class PatientRegActivity extends AppCompatActivity {
     @BindView(R.id.rel_layout_patient)
     RelativeLayout relativeLayout;
 
-    Button btn;
+    Button regBtn;
     ProgressBar progressbar;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("patients");
@@ -66,10 +66,10 @@ public class PatientRegActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         ButterKnife.bind(this);
         mAuth = FirebaseAuth.getInstance();
-        btn = findViewById(R.id.button2);
+        regBtn = findViewById(R.id.patReg_btn);
 
         progressbar = findViewById(R.id.progressbar);
-        btn.setOnClickListener(new View.OnClickListener() {
+        regBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String name,email,pss,phone,genderr;
@@ -106,13 +106,8 @@ public class PatientRegActivity extends AppCompatActivity {
                     pass.setError("Please enter a strong password");
                     return;
                 }
-                Handler handler=new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        startActivity(new Intent(PatientRegActivity.this, PatientDetailsForm.class));
-                    }
-                },1000);
+
+
 
                 regPateint(email,pss,name,genderr,phone);
             }
@@ -132,7 +127,8 @@ public class PatientRegActivity extends AppCompatActivity {
                             verifyEMmail(user);
                             updateDetails(user,fname.getText().toString()+" "+lname.getText().toString());
                             progressbar.setVisibility(View.GONE);
-                            addToDatabse(user,name,email,user.getUid(),gender,mob);
+                            addToDatabse(user,name,email,user.getUid(),gender,mob,password);
+                            Toast.makeText(PatientRegActivity.this, "Registration Sucessful", Toast.LENGTH_SHORT).show();
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -175,15 +171,17 @@ public class PatientRegActivity extends AppCompatActivity {
                 });
     }
 
-    public void addToDatabse(FirebaseUser firebaseUser,String name,String email,String userId,String gender,String mob){
+    public void addToDatabse(FirebaseUser firebaseUser,String name,String email,String userId,String gender,String mob,String password){
         User user = new User();
         user.setUserName(name);
         user.setUserEmail(email);
+        user.setUserPass(password);
         user.setUserId(userId);
         user.setUserGender(gender);
         user.setUserPhone(mob);
         user.setUserType(DatabaseStatus.USER_TYPE_PATIENT+"");
         user.setStatus(DatabaseStatus.ACTIVE_STATUS+"");
         myRef.child(firebaseUser.getUid()).setValue(user);
+        startActivity(new Intent(PatientRegActivity.this, PatientDetailsForm.class));
     }
 }

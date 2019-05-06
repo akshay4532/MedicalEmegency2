@@ -13,11 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name="com.cmpundhir.cm.medical_services.BookAnApointmentActivity"></activity>
         <activity
             android:name=".doctor.DoctorHome2Activity"
             android:label="@string/title_activity_doctor_home2"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginChoiceActivity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.MapActivity" />
         <activity android:name=".patient.PatientDetailsForm" />
         <activity android:name=".doctor.DoctorDetailsFormActivity" />
         <activity android:name=".DoctorRegActivity" />
@@ -36,6 +38,10 @@
             android:name=".patient.PatientHomeActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
