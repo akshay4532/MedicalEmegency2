@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cmpundhir.bottom_doctor_fragments.DoctorDashboardFragment">
+    tools:context="com.cmpundhir.cm.bottom_doctor_fragments.DoctorDashboardFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Doctor Dashboard"
+        android:text="Doctor Dashboard Empty Now !!!!"
         android:textSize="20dp"
         android:gravity="center"/>
 

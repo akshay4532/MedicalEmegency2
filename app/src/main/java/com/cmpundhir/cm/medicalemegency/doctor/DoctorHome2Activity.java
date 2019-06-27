@@ -4,13 +4,12 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.cmpundhir.bottom_doctor_fragments.DoctorDashboardFragment;
-import com.cmpundhir.bottom_doctor_fragments.DoctorHomeFragment;
-import com.cmpundhir.bottom_doctor_fragments.DoctorNotificationsFragment;
-import com.cmpundhir.bottom_doctor_fragments.OnFragmentInteractionListener;
+import com.cmpundhir.cm.bottom_doctor_fragments.DoctorDashboardFragment;
+import com.cmpundhir.cm.bottom_doctor_fragments.DoctorHomeFragment;
+import com.cmpundhir.cm.bottom_doctor_fragments.DoctorNotificationsFragment;
+import com.cmpundhir.cm.bottom_doctor_fragments.OnFragmentInteractionListener;
 import com.cmpundhir.cm.medicalemegency.LoginChoiceActivity;
 import com.cmpundhir.cm.medicalemegency.R;
-import com.cmpundhir.cm.medicalemegency.patient.PatientHomeActivity;
 import com.cmpundhir.cm.medicalemegency.utils.Prefs;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -28,6 +27,11 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -40,9 +44,20 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.Menu;
 import android.widget.TextView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
+
 public class DoctorHome2Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , OnFragmentInteractionListener {
-            private BottomNavigationView.OnNavigationItemSelectedListener monNavigationItemSelectedListener
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    String currentUserGender;
+    CircleImageView headerimage;
+
+
+    private BottomNavigationView.OnNavigationItemSelectedListener monNavigationItemSelectedListener
                     = new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -58,37 +73,43 @@ public class DoctorHome2Activity extends AppCompatActivity
                             break;
                         case R.id.navigation_doc_notifications:
                             Log.d("DEBUG_DOC","navigation_doc_notifications invoked");
-                            setFragment(DoctorNotificationsFragment.newInstance("",""));
+                           setFragment(DoctorNotificationsFragment.newInstance("",""));
                             break;
                     }
                     Log.d("DEBUG_DOC","monNavigationItemSelectedListener invoked");
                     return true;
                 }
             };
-    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_home2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = findViewById(R.id.fab);
+//
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         View headerView = navigationView.getHeaderView(0);
         TextView headerName,headerEmail;
+        headerimage=headerView.findViewById(R.id.imageView1);
         headerName = headerView.findViewById(R.id.doc_name);
         headerEmail=headerView.findViewById(R.id.doc_email);
         headerName.setText(firebaseUser.getDisplayName());
         headerEmail.setText(firebaseUser.getEmail());
+
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_doc);
@@ -102,6 +123,27 @@ public class DoctorHome2Activity extends AppCompatActivity
 
         setFragment(DoctorHomeFragment.newInstance("",""));
         Log.d("DEBUG_DOC","setFragment invoked");
+        queryGender();
+    }
+
+    public void queryGender(){
+        databaseReference.child("doctors").child(firebaseUser.getUid())
+                .child("userGender").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                currentUserGender = dataSnapshot.getValue(String.class);
+                if(currentUserGender.equals("Male")){
+                    headerimage.setImageResource(R.drawable.doctor_male);
+                }else{
+                    headerimage.setImageResource(R.drawable.doctor_female);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -111,6 +153,7 @@ public class DoctorHome2Activity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+            System.exit(0);
         }
     }
 
@@ -142,11 +185,10 @@ public class DoctorHome2Activity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_doc_prof_icon) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
+        }
+        else if (id == R.id.nav_doc_pat_details)  {
 
         } else if (id == R.id.nav_tools) {
 

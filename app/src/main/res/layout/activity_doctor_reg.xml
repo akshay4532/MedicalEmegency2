@@ -1,158 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:background="@color/primaryDarkColor"
-    android:layout_height="match_parent"
-    tools:context=".DoctorRegActivity"
-    android:id="@+id/rel_layout">
-
-    <ImageView
-        android:id="@+id/img"
-        android:layout_above="@+id/loginCard"
-        android:transitionName="imageTransition"
-        android:src="@drawable/ic_pharmacy"
-        android:layout_width="96dp"
-        android:layout_centerInParent="true"
-        android:layout_height="96dp"
-        android:layout_margin="10dp"/>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/loginCard"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="3dp"
+    android:background="@drawable/e">
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="5dp"
-        android:padding="5dp"
-        android:layout_centerInParent="true"
-        app:cardUseCompatPadding="true">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:padding="10dp">
-            <TextView
-                android:layout_margin="2dp"
-                android:textColor="@color/primaryDarkColor"
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:text="Doctor Registration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <View
-                android:layout_marginTop="3dp"
-                android:background="#0D293E"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"/>
+        android:fontFamily="@font/modern_antiqua"
+        android:text="Fill All Details"
+        android:textColor="#ffff"
+        android:gravity="center"
+        android:textSize="25sp" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+    <View
+        android:layout_marginTop="3dp"
+        android:background="#49BEB7"
+        android:layout_width="450dp"
+        android:layout_height="2dp"/>
+    <androidx.cardview.widget.CardView
+        android:backgroundTint="@color/white"
+        app:cardUseCompatPadding="true"
+        app:cardPreventCornerOverlap="true"
+        android:layout_marginTop="5dp"
+        app:cardBackgroundColor="#5C000000"
+        android:elevation="5dp"
+        android:background="@drawable/art_state"
+        android:layout_margin="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="15dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="First Name"
-                    android:id="@+id/fname"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Last Name"
-                    android:id="@+id/lname"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Gender"
-                    android:textSize="18dp"
-                    android:layout_gravity="center_vertical"/>
-                <RadioGroup
-                    android:id="@+id/gender"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginLeft="10dp">
-                    <RadioButton
-                        android:id="@+id/male"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Male"/>
-                    <RadioButton
-                        android:id="@+id/female"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Female"/>
-                    <RadioButton
-                        android:id="@+id/others"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Others"/>
-
-                </RadioGroup>
-            </LinearLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Email"
-                    android:id="@+id/email"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="phone"
-                    android:hint="Mobile Number"
-                    android:id="@+id/mob"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:passwordToggleEnabled="true">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Password"
-                    android:inputType="textPassword"
-                    android:id="@+id/pass"/>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <Button
-                android:textColor="#fff"
-                android:backgroundTint="@color/primaryDarkColor"
-                android:id="@+id/reg_btn"
-                android:text="Register"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-
-        </LinearLayout>
+    <com.kofigyan.stateprogressbar.StateProgressBar
+        android:id="@+id/state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:spb_currentStateNumber="one"
+        app:spb_maxStateNumber="three"
+        app:spb_stateBackgroundColor="#BDBDBD"
+        app:spb_stateForegroundColor="#49BEB7"
+        app:spb_stateNumberBackgroundColor="#808080"
+        app:spb_stateNumberForegroundColor="#eeeeee"
+        app:spb_currentStateDescriptionColor="#49BEB7"
+        app:spb_stateDescriptionColor="#49BEB7"
+        app:spb_animateToCurrentProgressState="true"
+        app:spb_checkStateCompleted="true"/>
 
     </androidx.cardview.widget.CardView>
-    <ProgressBar
-        android:visibility="gone"
-        android:id="@+id/progressbar"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/container">
+    </FrameLayout>
+
+</LinearLayout>
+
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:background="@color/primaryDarkColor"-->
+    <!--android:layout_height="match_parent"-->
+    <!--tools:context=".DoctorRegActivity"-->
+    <!--android:id="@+id/rel_layout">-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/img"-->
+        <!--android:layout_above="@+id/loginCard"-->
+        <!--android:transitionName="imageTransition"-->
+        <!--android:src="@drawable/ic_pharmacy"-->
+        <!--android:layout_width="96dp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_height="96dp"-->
+        <!--android:layout_margin="10dp"/>-->
+
+    <!--<androidx.cardview.widget.CardView-->
+        <!--android:id="@+id/loginCard"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:cardCornerRadius="5dp"-->
+        <!--app:cardElevation="5dp"-->
+        <!--android:padding="5dp"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--app:cardUseCompatPadding="true">-->
+        <!--<LinearLayout-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--android:padding="10dp">-->
+            <!--<TextView-->
+                <!--android:layout_margin="2dp"-->
+                <!--android:textColor="@color/primaryDarkColor"-->
+                <!--android:textStyle="bold"-->
+                <!--android:textSize="24sp"-->
+                <!--android:text="Doctor Registration"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+            <!--<View-->
+                <!--android:layout_marginTop="3dp"-->
+                <!--android:background="#0D293E"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="2dp"/>-->
+
+            <!--<com.google.android.material.textfield.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<com.google.android.material.textfield.TextInputEditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="First Name"-->
+                    <!--android:id="@+id/fname"/>-->
+            <!--</com.google.android.material.textfield.TextInputLayout>-->
+            <!--<com.google.android.material.textfield.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<com.google.android.material.textfield.TextInputEditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="Last Name"-->
+                    <!--android:id="@+id/lname"/>-->
+            <!--</com.google.android.material.textfield.TextInputLayout>-->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_marginTop="10dp">-->
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Gender"-->
+                    <!--android:textSize="18dp"-->
+                    <!--android:layout_gravity="center_vertical"/>-->
+                <!--<RadioGroup-->
+                    <!--android:id="@+id/gender"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:layout_marginLeft="10dp">-->
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/male"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Male"/>-->
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/female"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Female"/>-->
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/others"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Others"/>-->
+
+                <!--</RadioGroup>-->
+            <!--</LinearLayout>-->
+            <!--<com.google.android.material.textfield.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<com.google.android.material.textfield.TextInputEditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="Email"-->
+                    <!--android:id="@+id/email"/>-->
+            <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+            <!--<com.google.android.material.textfield.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<com.google.android.material.textfield.TextInputEditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:inputType="phone"-->
+                    <!--android:hint="Mobile Number"-->
+                    <!--android:id="@+id/mob"/>-->
+            <!--</com.google.android.material.textfield.TextInputLayout>-->
+            <!--<com.google.android.material.textfield.TextInputLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--app:passwordToggleEnabled="true">-->
+
+                <!--<com.google.android.material.textfield.TextInputEditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="Password"-->
+                    <!--android:inputType="textPassword"-->
+                    <!--android:id="@+id/pass"/>-->
+            <!--</com.google.android.material.textfield.TextInputLayout>-->
+
+            <!--<Button-->
+                <!--android:textColor="#fff"-->
+                <!--android:backgroundTint="@color/primaryDarkColor"-->
+                <!--android:id="@+id/reg_btn"-->
+                <!--android:text="Register"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content" />-->
+
+
+        <!--</LinearLayout>-->
+
+    <!--</androidx.cardview.widget.CardView>-->
+    <!--<ProgressBar-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/progressbar_doc"-->
+        <!--android:layout_centerInParent="true"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+<!--</RelativeLayout>-->

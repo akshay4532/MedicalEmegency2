@@ -1,0 +1,74 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.cmpundhir.cm.pat_frags.PatLoginFragment"
+    android:background="@drawable/e"
+    android:layout_gravity="center_horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardBackgroundColor="#31CCC7C7"
+        android:id="@+id/loginCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="15dp"
+        android:layout_centerInParent="true"
+        app:cardUseCompatPadding="true">
+
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:padding="10dp"
+                android:textColor="#33E220"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Your, All details Submitted Sucessfully"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#032E33" />
+            <TextView
+                android:padding="10dp"
+                android:textColor="#B36868"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="note *: please, move further for login to press button below . "/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#032E33" />
+
+            <Button
+                android:fontFamily="@font/modern_antiqua"
+                android:elevation="2dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/art_btn"
+                android:textColor="#E9E1DF"
+                android:id="@+id/docFrag_contLog_btn"
+                android:text="Continue Login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

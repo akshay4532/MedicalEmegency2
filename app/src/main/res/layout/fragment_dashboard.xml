@@ -1,15 +1,27 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<LinearLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cmpundhir.bottom_patient_fragments.DashboardFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+<androidx.cardview.widget.CardView
+    android:layout_margin="5dp"
+    app:cardCornerRadius="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <GridView
+        android:id="@+id/grid_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="patient dash board"
-        android:textSize="20dp"
-        android:gravity="center"/>
+        android:numColumns="3"
+        android:columnWidth="100dp"
+        android:horizontalSpacing="2dp"
+        android:verticalSpacing="2dp"
+        android:gravity="center"
+        android:stretchMode="spacingWidthUniform" >
 
-</FrameLayout>
+    </GridView>
+</androidx.cardview.widget.CardView>
+</LinearLayout>

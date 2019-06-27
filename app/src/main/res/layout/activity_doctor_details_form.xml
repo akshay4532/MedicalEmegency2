@@ -18,6 +18,7 @@
         android:layout_centerInParent="true"
         android:layout_height="96dp"
         android:layout_margin="10dp"/>
+
     <androidx.cardview.widget.CardView
         android:id="@+id/loginCard"
         android:layout_weight="1"
@@ -45,7 +46,7 @@
                     android:text="Doctor Profile"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
-                android:padding="10dp">
+                         android:padding="10dp">
                 <TextView
                     android:textColor="@color/primaryDarkColor"
                     android:textStyle="bold"
@@ -59,7 +60,26 @@
                     android:layout_height="2dp"
                     android:background="@color/design_default_color_primary_dark"/>
 
-
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textCapWords"
+                        android:id="@+id/doc_fname"
+                        android:hint="Enter Father's Name*"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textCapWords"
+                        android:id="@+id/doc_mom"
+                        android:hint="Enter Mother's Name*"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -71,6 +91,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="vertical">
+                        
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
@@ -78,18 +99,18 @@
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Enter your DOB"
-                                android:id="@+id/pat_dob"/>
+                                android:hint="Enter your DOB(DD/MM/YY)*"
+                                android:id="@+id/doc_dob"/>
                         </com.google.android.material.textfield.TextInputLayout>
-
+                    
                     </LinearLayout>
 
-
+                    
                     <Button
                         android:layout_gravity="end"
                         android:textColor="#ffff"
                         android:backgroundTint="@color/primaryDarkColor"
-                        android:id="@+id/pat_calenderbtn"
+                        android:id="@+id/doc_calenderbtn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Pick DOB " />
@@ -100,8 +121,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/pat_Nation"
-                        android:hint="Nationality"
+                        android:inputType="textCapWords"
+                        android:id="@+id/doc_Nation"
+                        android:hint="Enter Nationality*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -112,8 +134,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/pat_langspoken"
-                        android:hint="Language Spoken "
+                        android:inputType="textCapWords"
+                        android:id="@+id/doc_langspoken"
+                        android:hint="Language Spoken*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -123,8 +146,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/pat_medHistory"
-                        android:hint="Past Medical History  "
+                        android:inputType="textCapWords"
+                        android:id="@+id/doc_medHistory"
+                        android:hint="Enter Past Medical History*  "
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -133,8 +157,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/pat_blood"
-                        android:hint="Blood Group "
+                        android:inputType="textCapWords"
+                        android:id="@+id/doc_blood"
+                        android:hint="Enter Blood Group*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -161,7 +186,7 @@
                         android:entries="@array/Category"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:id="@+id/specialist"
+                        android:id="@+id/specialist_doc"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -171,8 +196,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
+                            android:inputType="textCapWords"
                             android:id="@+id/doc_qual"
-                            android:hint="Qualification"
+                            android:hint="Enter your Qualification*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -182,7 +208,7 @@
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/doc_reg"
-                            android:hint="Registration Number "
+                            android:hint="Enter your Registration Number*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -191,8 +217,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/instituteEdit5"
-                            android:hint="Institute Name  "
+                            android:inputType="textCapWords"
+                            android:id="@+id/doc_insti"
+                            android:hint="Enter your Institute Name*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -201,11 +228,13 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
+
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/doc_wrkingplace"
-                            android:hint="Oresent Working Institute  "
+                            android:id="@+id/doc_wrkingInsti"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Present Working Institute Name*"
+                            android:inputType="textCapWords" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                 </LinearLayout>
@@ -215,8 +244,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textCapWords"
                         android:id="@+id/doc_exp"
-                        android:hint="Year of experience "
+                        android:hint="Enter Year of Experience*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -224,8 +254,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textCapWords"
                         android:id="@+id/doc_certificate"
-                        android:hint="Certification Titile"
+                        android:hint="Enter Certification Title*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -251,8 +282,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/pat_flat"
-                            android:hint="Flat No. And BLDG. Name  "
+                            android:inputType="textCapWords"
+                            android:id="@+id/doc_flat"
+                            android:hint="Flat No. And BLDG. Name*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -261,8 +293,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/pat_road"
-                            android:hint="Road No./Name  "
+                            android:inputType="textCapWords"
+                            android:id="@+id/doc_road"
+                            android:hint="Road No./Name*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -271,8 +304,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/pat_Locality"
-                            android:hint="Area / Locality "
+                            android:inputType="textCapWords"
+                            android:id="@+id/doc_Locality"
+                            android:hint="Area / Locality*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -281,8 +315,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/pat_city"
-                            android:hint="City "
+                            android:inputType="textCapWords"
+                            android:id="@+id/doc_city"
+                            android:hint="Enter City*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -291,8 +326,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/pat_state"
-                            android:hint="State"
+                            android:inputType="textCapWords"
+                            android:id="@+id/doc_state"
+                            android:hint="Enter State*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -301,8 +337,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/pat_country"
-                            android:hint="Country "
+                            android:inputType="textCapWords"
+                            android:id="@+id/doc_country"
+                            android:hint="Enter Country Name*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -311,8 +348,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/pat_pin"
-                            android:hint="Pin Code"
+                            android:inputType="number"
+                            android:id="@+id/doc_pin"
+                            android:hint="Enter Pin Code*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -324,7 +362,7 @@
                 <Button
                     android:textColor="#fff"
                     android:backgroundTint="@color/primaryDarkColor"
-                    android:id="@+id/button2"
+                    android:id="@+id/docSubmit_btn"
                     android:text="Submit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -332,4 +370,10 @@
             </LinearLayout>
         </ScrollView>
     </androidx.cardview.widget.CardView>
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressbarDetaiDoctor"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </LinearLayout>

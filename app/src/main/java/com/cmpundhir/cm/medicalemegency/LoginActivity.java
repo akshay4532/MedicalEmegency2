@@ -10,11 +10,17 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.cmpundhir.cm.ForgotPassword;
+import com.cmpundhir.cm.medicalemegency.doctor.DoctorDetailsFormActivity;
 import com.cmpundhir.cm.medicalemegency.doctor.DoctorHome2Activity;
 import com.cmpundhir.cm.medicalemegency.model.User;
+import com.cmpundhir.cm.medicalemegency.patient.PatientDetailsForm;
 import com.cmpundhir.cm.medicalemegency.patient.PatientHomeActivity;
 import com.cmpundhir.cm.medicalemegency.utils.DatabaseStatus;
 import com.cmpundhir.cm.medicalemegency.utils.Prefs;
@@ -43,12 +49,18 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.pass)
     TextInputEditText passwordEdit;
     int type;
+    @BindView(R.id.progressbarLogin)
+    ProgressBar progressBar;
+
     RelativeLayout relativeLayout;
     DatabaseReference mRef = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
         ButterKnife.bind(this);
@@ -57,11 +69,15 @@ public class LoginActivity extends AppCompatActivity {
         type = getIntent().getIntExtra("type",0);
         mAuth = FirebaseAuth.getInstance();
     }
-
+    @OnClick(R.id.forgtpass)
+    public void frgtPass(View view){
+        startActivity(new Intent(LoginActivity.this, ForgotPassword.class));
+    }
     @OnClick(R.id.button)
     public void onLogin(View view){
         String email,pass;
         email=emailEdit.getText().toString().trim();
+        Log.d("mail","email utaya"+email);
         pass=passwordEdit.getText().toString().trim();
         if(TextUtils.isEmpty(email)){
             emailEdit.setError("Please Enter Email");
@@ -83,6 +99,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void signIn(String email,String password){
+        progressBar.setVisibility(View.VISIBLE);
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
@@ -91,10 +108,12 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             fetchUserDetails();
+                            progressBar.setVisibility(View.GONE);
 
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            progressBar.setVisibility(View.GONE);
                             Toast.makeText(LoginActivity.this, "Authentication failed.\n"+task.getException().getMessage(),
                                     Toast.LENGTH_LONG).show();
 
@@ -120,6 +139,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 User myuser = dataSnapshot.getValue(User.class);
+
                 Prefs.setUserName(myuser.getUserName());
                 //Prefs.setUser_L_Name(myuser.);
                 Prefs.setEmail(myuser.getUserEmail());
@@ -130,20 +150,22 @@ public class LoginActivity extends AppCompatActivity {
                         Prefs.setUserType(1);
                         intent = new Intent(LoginActivity.this, PatientHomeActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        Toast.makeText(LoginActivity.this, Prefs.getUserName(), Toast.LENGTH_SHORT).show();
+                        startActivity(intent);
+                        finish();
 
                         break;
                     case 2:
                         Prefs.setUserType(2);
                         intent = new Intent(LoginActivity.this, DoctorHome2Activity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        Toast.makeText(LoginActivity.this, Prefs.getUserName(), Toast.LENGTH_SHORT).show();
+                        startActivity(intent);
+                        finish();
 
                         break;
                 }
                 Prefs.commit();
-
-                Toast.makeText(LoginActivity.this, Prefs.getUserName(), Toast.LENGTH_SHORT).show();
-                startActivity(intent);
-                finish();
             }
 
             @Override

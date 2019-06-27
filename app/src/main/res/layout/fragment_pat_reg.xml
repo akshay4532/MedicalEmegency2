@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/patRegFrag"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/e">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".PatientRegActivity"
+        android:id="@+id/rel_layout_patient">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".PatientRegActivity">
+            <!--<ImageView-->
+             <!--android:layout_alignParentTop="true"-->
+                <!--android:id="@+id/img"-->
+                <!--android:layout_above="@+id/loginCard"-->
+                <!--android:transitionName="imageTransition"-->
+                <!--android:src="@drawable/patient"-->
+                <!--android:layout_width="100dp"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:layout_height="100dp"-->
+                <!--android:layout_margin="14dp"/>-->
+
+            <androidx.cardview.widget.CardView
+                app:cardPreventCornerOverlap="true"
+                app:cardBackgroundColor="#00000000"
+                android:id="@+id/loginCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="5dp"
+                android:layout_centerInParent="true"
+                app:cardUseCompatPadding="true">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/aclonica"
+                        android:gravity="left"
+                        android:text="You registered as patient :-"
+                        android:textColor="#ffff"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+                    <View
+                        android:layout_marginTop="3dp"
+                        android:background="#49BEB7"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_marginTop="15dp"
+                        android:textColorHint="#ffff"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:background="@drawable/edit_style"
+                            android:textColorHint="#ffff"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter First Name *"
+                            android:id="@+id/regPatfname"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColorHint="#ffff">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:background="@drawable/edit_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Last Name *"
+                            android:id="@+id/lname"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp">
+                        <TextView
+                            android:background="@drawable/edit_style"
+                            android:textColor="#ffff"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Gender : *"
+                            android:textSize="18dp"
+                            android:layout_gravity="center_vertical"/>
+                        <RadioGroup
+                            android:background="@drawable/edit_style"
+                            android:id="@+id/gender"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginLeft="10dp">
+                            <RadioButton
+                                android:textColor="#ffff"
+                                android:id="@+id/male"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Male"/>
+                            <RadioButton
+                                android:textColor="#ffff"
+                                android:id="@+id/female"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Female"/>
+
+                        </RadioGroup>
+                    </LinearLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="#ffff"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:background="@drawable/edit_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress"
+                            android:hint="Enter Email *"
+                            android:id="@+id/email"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="#ffff"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:background="@drawable/edit_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Enter Mobile Number *"
+                            android:inputType="phone"
+                            android:id="@+id/mob"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_marginTop="10dp"
+                        android:textColorHint="#ffff"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:passwordToggleEnabled="true">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:background="@drawable/edit_style"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Create Password *"
+                            android:inputType="textPassword"
+                            android:id="@+id/pass"/>
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                    <Button
+                        android:fontFamily="@font/modern_antiqua"
+                        android:elevation="23dp"
+                        android:layout_margin="20dp"
+                        android:background="@drawable/art_btn"
+                        android:textColor="#fff"
+                        android:id="@+id/patReg_btn"
+                        android:text="Register"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+                </ScrollView>
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progressbarPati"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+</FrameLayout>

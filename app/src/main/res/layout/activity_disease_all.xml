@@ -1,0 +1,599 @@
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center">
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:orientation="vertical"
+        tools:context="com.example.android.healthd.MainActivity">
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="20dp"
+            android:text="General"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+
+
+
+
+        <Button
+            android:id="@+id/hypothermia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Hypothermia"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/heatStroke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Heat Stroke Or SunStroke"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+
+
+        <Button
+            android:id="@+id/seizure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Seizure or Fits"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/diabetes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Diabetes Up"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/cytis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Cystis"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+			
+			
+		<Button
+            android:id="@+id/diabetes2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Diabetes Down"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+
+        <Button
+            android:id="@+id/triggers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Triggers"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/accidents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Road Accidents"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/chickenPox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Chicken Pox"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/measles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Measles"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/typhoid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Typhoid"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/hepatitisA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Hepatitis A"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/conjuctivitis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Conjuctivitis"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+			
+			
+
+			
+			
+
+        <Button
+            android:id="@+id/urineInfection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Urine Infection"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/dengue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Dengue"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/cholera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Cholera"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="20dp"
+            android:text="Hormonal"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/hyperthyroidism"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Hyperthyroidism"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+			
+			
+		
+			
+			
+			
+
+        <Button
+            android:id="@+id/osteoporosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Osteoporosis"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/breastCancerRisk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Breast Cancer Risk"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/parkinson"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Parkinson"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="20dp"
+            android:text="Neurological"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+
+
+
+        <Button
+            android:id="@+id/alzheimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Alzheimer"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/migraine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Migraine"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/epilepsy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Epilepsy"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/brainHemorrhage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Brain Hemorrhage"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="20dp"
+            android:text="Digestive System"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+
+
+        <Button
+            android:id="@+id/celiac"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Celiac"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+
+
+        <Button
+            android:id="@+id/irritableBowlSyndrome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+          android:padding="20dp"
+            android:text="Irritable Bowl Syndrome"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/gstroesophagealRefluxDisease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Gastroesophageal Reflux Disease"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/inflammatoryBowelDisease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Inflammatory Bowel Disease"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/gastroparesise"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Gastroparesiss"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="20dp"
+            android:text="Respiratory System"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/asthma"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Asthma"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/chronicObstructivePulmonaryDisease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Chronic Obstructive Pulmonary Disease"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/chronicBronchitis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Chronic Bronchitis"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/pneumonia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Pneumonia"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/tuberculosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Tuberculosis"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="20dp"
+            android:text="Circulatory System"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/heartAttack"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Heart Attacks"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/peripheralArteryDisease"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Peripheral artery disease"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/atherosclerosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Atherosclerosis"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="20dp"
+            android:text="Excretory System"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/black"
+            android:textStyle="bold" />
+
+
+        <Button
+            android:id="@+id/nephritis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Nephritis"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+
+
+        <Button
+            android:id="@+id/nephrosis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Nephrosis"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/kidneyStones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#039BE5"
+            android:padding="20dp"
+            android:text="Kidney Stones"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+
+        <Button
+            android:id="@+id/vesicoureteralReflux"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#64B5F6"
+            android:padding="20dp"
+            android:text="Vesicoureteral Reflux"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>

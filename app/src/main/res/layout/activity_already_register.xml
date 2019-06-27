@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlreadyRegister">
+
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/blur_scope"/>
+    <!--android:rotation="540"-->
+
+    <LinearLayout
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_style_back"
+            android:fontFamily="@font/modern_antiqua"
+            android:gravity="center"
+            android:text="Move Forward for Details :"
+            android:textColor="#220363"
+            android:textSize="17sp" />
+
+        <!--<View-->
+            <!--android:layout_marginLeft="30dp"-->
+            <!--android:layout_width="325sp"-->
+            <!--android:layout_height="2dp"-->
+            <!--android:background="#03464E" />-->
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="#23212424"
+        android:layout_gravity="center"
+        android:id="@+id/loginCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="12dp"
+        android:layout_centerInParent="true"
+        app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/aclonica"
+        android:textColor="#220363"
+        android:padding="12dp"
+        android:text="Registered Email  : "
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    <View
+        android:background="#65B0B9"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginTop="5sp"
+        android:textColorHint="#110D0D"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:background="@drawable/edit_style"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Registered Email Id"
+            android:id="@+id/emailAlrdyReg"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:backgroundTint="#6B0C2C8D"
+            android:fontFamily="@font/modern_antiqua"
+            android:elevation="20dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/art_regcontbtn"
+            android:textColor="#fff"
+            android:id="@+id/AlrdyReg_btn"
+            android:text="Continue"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

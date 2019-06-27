@@ -55,6 +55,7 @@ public class User {
     }
 
     public void setUserType(String userType) {
+
         this.userType = userType;
     }
 
@@ -66,11 +67,11 @@ public class User {
         this.status = status;
     }
 
-    public String setUserPass(String userPass) {
+    public String getUserPass() {
         return userPass;
     }
 
-    public void getUserPass(String userPass) {
+    public void setUserPass(String userPass) {
         this.userPass = userPass;
     }
 }

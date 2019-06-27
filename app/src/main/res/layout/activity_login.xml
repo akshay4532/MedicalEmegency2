@@ -4,31 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3A819B"
+    android:background="@drawable/log"
     tools:context=".LoginActivity">
 
+    <ProgressBar
+        android:visibility="gone"
+        android:id="@+id/progressbarLogin"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_above="@id/loginCard"-->
+        <!--android:layout_marginBottom="40dp">-->
 
-    <RelativeLayout
-        android:layout_marginTop="115dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/img"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginHorizontal="150dp"
-            android:src="@drawable/ic_pharmacy"
-            android:transitionName="imageTransition" />
-    </RelativeLayout>
+        <!--<ImageView-->
+            <!--android:id="@+id/img"-->
+            <!--android:layout_width="100dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:src="@drawable/ic_pharmacy"-->
+            <!--android:transitionName="imageTransition" />-->
+    <!--</RelativeLayout>-->
 
     <androidx.cardview.widget.CardView
+        android:layout_margin="1dp"
+        app:cardBackgroundColor="#23747E7E"
+        android:layout_gravity="center"
         android:id="@+id/loginCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
-        app:cardElevation="5dp"
+        app:cardElevation="12dp"
         android:layout_centerInParent="true"
         app:cardUseCompatPadding="true">
 
@@ -40,54 +49,84 @@
             android:padding="10dp">
 
             <TextView
-                android:textColor="@color/primaryDarkColor"
-                android:textStyle="bold"
-                android:textSize="30sp"
-                android:text="LOGIN :"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:textColor="#161A1A"
+                android:padding="12dp"
+                android:text="Login  : "
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="25dp"
+                android:textStyle="bold" />
             <View
                 android:layout_marginTop="2dp"
-                android:background="#0D293E"
+                android:background="#1D47E0"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"/>
-
             <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="15dp"
+                android:textColorHint="#110D0D"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="12dp">
+                android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:background="@drawable/edit_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Email"
+                    android:hint="Enter email id"
                     android:id="@+id/email"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:drawableLeft="@drawable/user"
+                android:textColorHint="#110D0D"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:passwordToggleEnabled="true">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:background="@drawable/edit_style"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password"
+                    android:hint="Enter password  "
                     android:inputType="textPassword"
                     android:id="@+id/pass"/>
             </com.google.android.material.textfield.TextInputLayout>
 
+
             <Button
-                android:textSize="18dp"
-                android:textStyle="bold"
-                android:textColor="#fff"
-                android:background="@drawable/gradbtn"
+                android:backgroundTint="#ffff"
                 android:id="@+id/button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Login " />
+                android:layout_marginTop="15dp"
+                android:background="@drawable/btnedit_style"
+                android:drawableLeft="@drawable/btnlogin_back"
+                android:fontFamily="@font/modern_antiqua"
+                android:text="Login "
+                android:textColor="#0D130B"
+                android:textSize="18dp"
+                android:textStyle="bold" />
 
 
+            <TextView
+                android:id="@+id/forgtpass"
+               android:layout_gravity="end|bottom"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:textColor="#2756A8"
+                android:text="Forgot Password ?"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textSize="16dp"
+                android:textStyle="bold|italic" />
+            <View
+                android:layout_gravity="bottom|end"
+                android:layout_marginTop="2dp"
+                android:background="#313738"
+                android:layout_width="160dp"
+                android:layout_height="2dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

@@ -5,11 +5,11 @@
     <gradient
         android:angle="180"
         android:startColor="#6EABB3"
-        android:endColor="@color/colorPrimaryDark"
+       android:endColor="@color/primaryDarkColor"
         android:type="linear"/>
-    <stroke android:color="#AE532A"
-        android:width="3dp"
-        android:dashGap="10dp"/>
+    <stroke android:color="#000000"
+        android:width="5dp"
+        android:dashGap="16dp"/>
     <size
         android:width="2dp"/>
     <corners android:bottomLeftRadius="50dp"

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape"
+        android:gravity="right"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_marginTop="3dp"
+            android:gravity="fill"
+            android:textStyle="bold"
+            android:textColor="#ffff"
+            android:textSize="15dp"
+            android:layout_marginRight="110dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register Not Sucess !!" />
+
+
+        <Button
+            android:id="@+id/cross"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:background="@drawable/error" />
+    </LinearLayout>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="notsucess.json"
+        app:lottie_loop="true" />
+    <TextView
+        android:textColor="#F30F0F"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registration is Not Successful !!"
+        android:id="@+id/txt2"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:textSize="20dp"
+        android:textAlignment="textEnd"
+        android:layout_margin="10dp"
+        android:textStyle="bold|italic"
+        android:textColor="#01579B"
+        android:backgroundTint="#99FFFFFF"
+        android:id="@+id/try_again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="please retry ?" />
+
+    <ImageView
+        android:id="@+id/refresh"
+        android:layout_gravity="center"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/refresh"/>
+
+</LinearLayout>
+
+</LinearLayout>

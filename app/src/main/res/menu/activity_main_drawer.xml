@@ -26,7 +26,7 @@
         <menu>
             <item
                 android:id="@+id/services"
-                android:icon="@drawable/near"
+                android:icon="@drawable/neartby"
                 android:title="Services Near by" />
         </menu>
     </item>

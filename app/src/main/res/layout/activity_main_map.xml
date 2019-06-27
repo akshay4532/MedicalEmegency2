@@ -3,39 +3,78 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#807b4e"
+    android:background="@drawable/med_lit_blue"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".MapActivity">
+    android:gravity="center">
+
+    <TextView
+        android:textColor="#1722EC"
+        android:id="@+id/txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Services "
+        android:textSize="45dp"
+        android:textStyle="bold|italic" />
+    <View
+        android:layout_below="@id/txt"
+        android:background="#332E2E"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:background="@color/transparent"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
 
     <Button
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="12dp"
+        android:background="@drawable/hospi"
         android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="181dp"
         android:onClick="open1"
-        android:text="Hospilats"
+        android:text="Hospitals"
+        android:textColor="#D51EBD"
         android:textAllCaps="false"
-        android:textSize="25sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <Button
+        android:layout_margin="12dp"
+        android:gravity="center"
+        android:textColor="#1B4E35"
+        android:background="@drawable/phar"
         android:id="@+id/btn2"
         android:layout_width="match_parent"
         android:layout_height="167dp"
         android:onClick="open2"
         android:text="Pharmacy"
         android:textAllCaps="false"
-        android:textSize="25sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
 
     <Button
+        android:layout_margin="12dp"
+        android:textColor="#11010F"
+        android:background="@drawable/ambu"
         android:id="@+id/btn3"
         android:layout_width="match_parent"
         android:layout_height="163dp"
         android:onClick="open3"
         android:text="Ambulance"
         android:textAllCaps="false"
-        android:textSize="25sp"
+        android:textSize="35sp"
         android:textStyle="bold" />
+
+    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

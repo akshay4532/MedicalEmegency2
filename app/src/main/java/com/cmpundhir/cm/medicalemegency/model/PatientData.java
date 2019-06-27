@@ -3,7 +3,7 @@ package com.cmpundhir.cm.medicalemegency.model;
 public class PatientData {
 
     private String patiFatherName;
-    private String patiMotherEmail;
+    private String patiMotherName;
     private String patDob;
     private String patimaried;
     private String patiUnmaried;
@@ -30,12 +30,12 @@ public class PatientData {
         this.patiFatherName = patiFatherName;
     }
 
-    public String getPatiMotherEmail() {
-        return patiMotherEmail;
+    public String getPatiMotherName() {
+        return patiMotherName;
     }
 
-    public void setPatiMotherEmail(String patiMotherEmail) {
-        this.patiMotherEmail = patiMotherEmail;
+    public void setPatiMotherName(String patiMotherName) {
+        this.patiMotherName = patiMotherName;
     }
 
     public String getPatDob() {

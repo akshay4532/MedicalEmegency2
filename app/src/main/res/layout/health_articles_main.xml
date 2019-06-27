@@ -1,0 +1,187 @@
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+            android:background="@drawable/night">
+
+            <TextView
+                android:textColor="#B1B11A"
+                android:id="@+id/txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Tips For Good Health "
+                android:textSize="35dp"
+                android:textStyle="bold|italic" />
+            <View
+                android:layout_below="@id/txt"
+                android:background="#FFF9F9"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:paddingTop="12dp"
+                android:layout_margin="12dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="12dp">
+
+
+                <Button
+                    android:backgroundTint="#64B5F6"
+                    android:background="@drawable/art_btn"
+                    android:textSize="25dp"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/a1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="7dp"
+                    android:text="Healthy You Healthy Environment"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold|italic" />
+
+                <Button
+                    android:background="@drawable/art_btn"
+                    android:textSize="25dp"
+                    android:textStyle="bold|italic"
+                    android:layout_marginTop="4dp"
+                    android:id="@+id/a2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#039BE5"
+                    android:padding="7dp"
+                    android:text="Do's and Dont's During Pregnancy"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:background="@drawable/art_btn"
+                    android:textSize="25dp"
+                    android:textStyle="bold|italic"
+                    android:layout_margin="3dp"
+                    android:id="@+id/a3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#64B5F6"
+                    android:padding="7dp"
+                    android:text="Vaccination for children"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"/>
+
+                <Button
+                    android:background="@drawable/art_btn"
+                    android:textSize="25dp"
+                    android:textStyle="bold|italic"
+                    android:layout_margin="3dp"
+                    android:id="@+id/a4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#039BE5"
+                    android:padding="7dp"
+                    android:text="Balanced Diet"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"/>
+
+
+                <Button
+                    android:id="@+id/a5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#64B5F6"
+                    android:padding="7dp"
+                    android:text="Say no to Constipation"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/art_btn"
+                    android:textSize="25dp"
+                    android:textStyle="bold|italic"
+                    android:layout_margin="3dp" />
+
+
+                <Button
+                    android:id="@+id/a6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#039BE5"
+                    android:padding="7dp"
+                    android:text="Healthy Heart"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/art_btn"
+                    android:textSize="25dp"
+                    android:textStyle="bold|italic"
+                    android:layout_margin="3dp" />
+
+
+
+                <Button
+                    android:id="@+id/a7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#64B5F6"
+                    android:padding="7dp"
+                    android:text="Yogasana"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/art_btn"
+                    android:textSize="25dp"
+                    android:textStyle="bold|italic"
+                    android:layout_margin="3dp" />
+
+                <Button
+                    android:id="@+id/a8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#039BE5"
+                    android:padding="7dp"
+                    android:text="Brain Power is Main Power"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/art_btn"
+                    android:textSize="25dp"
+                    android:textStyle="bold|italic"
+                    android:layout_margin="3dp" />
+
+                <Button
+                    android:id="@+id/a9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#64B5F6"
+                    android:padding="7dp"
+                    android:text="Immunity Gym"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/art_btn"
+                    android:textSize="25dp"
+                    android:textStyle="bold|italic"
+                    android:layout_margin="3dp" />
+
+                <Button
+                    android:id="@+id/a10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#039BE5"
+                    android:padding="7dp"
+                    android:text="Quick Home Remedies"
+                    android:textAppearance="?android:textAppearanceMedium"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/art_btn"
+                    android:textSize="25dp"
+                    android:textStyle="bold|italic"
+                    android:layout_margin="3dp" />
+
+
+            </LinearLayout>
+
+            </ScrollView>
+
+
+
+    </LinearLayout>

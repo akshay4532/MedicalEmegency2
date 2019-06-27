@@ -2,14 +2,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cmpundhir.bottom_patient_fragments.NotificationsFragment">
+    android:orientation="vertical"
+    tools:context="com.cmpundhir.cm.bottom_patient_fragments.NotificationsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
+        android:id="@+id/rel"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="patient Notifications"
-        android:textSize="20dp"
-        android:gravity="center" />
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/modern_antiqua"
+        android:text="Your Notifications"
+        android:textColor="#030F22"
+        android:gravity="center"
+        android:textSize="30sp" />
+    <View
+        android:id="@+id/view"
+        android:layout_below="@id/txt1"
+        android:layout_marginTop="3dp"
+        android:background="#000000"
+        android:layout_width="450dp"
+        android:layout_height="2dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/view"
+        android:layout_marginTop="10dp"
+        android:id="@+id/recycerpatNotification"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+
 
 </FrameLayout>

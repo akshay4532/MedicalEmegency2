@@ -7,13 +7,27 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.cmpundhir.cm.medical_services.BookAnApointmentActivity"></activity>
+        <activity android:name="com.cmpundhir.cm.medical_services.BookingDetailsActivity"></activity>
+        <activity android:name="com.cmpundhir.cm.ForgotPassword" />
+        <activity android:name=".AlreadyRegister" />
+        <activity android:name="com.cmpundhir.cm.medical_services.BookAnApointmentActivity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.a1_healthy_you_healthy_environment_activity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.a2_dos_and_donts_during_pregnancy_activity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.a3_vaccination_for_children_activity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.a4_balance_diet_activity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.a5_say_no_to_constipation_activity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.a6_healthy_heart_activity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.a7_yogasana_activity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.a8_brain_power_is_main_power_activity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.a9_immunity_gym_activity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.a10_home_remedies_activity" />
+        <activity android:name="com.cmpundhir.cm.medical_services.pdf_view.HealthArticles" />
         <activity
             android:name=".doctor.DoctorHome2Activity"
             android:label="@string/title_activity_doctor_home2"

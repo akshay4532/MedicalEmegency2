@@ -4,13 +4,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.cmpundhir.bottom_patient_fragments.DashboardFragment;
-import com.cmpundhir.bottom_patient_fragments.HomeFragment;
-import com.cmpundhir.bottom_patient_fragments.NotificationsFragment;
-import com.cmpundhir.bottom_patient_fragments.OnFragmentInteractionListener;
+import com.cmpundhir.cm.bottom_patient_fragments.DashboardFragment;
+import com.cmpundhir.cm.bottom_patient_fragments.HomeFragment;
+import com.cmpundhir.cm.bottom_patient_fragments.NotificationsFragment;
+import com.cmpundhir.cm.bottom_patient_fragments.OnFragmentInteractionListener;
 import com.cmpundhir.cm.medical_services.MapActivity;
+import com.cmpundhir.cm.medical_services.pdf_view.HealthArticles;
 import com.cmpundhir.cm.medicalemegency.LoginChoiceActivity;
-import com.cmpundhir.cm.medicalemegency.model.User;
 import com.cmpundhir.cm.medicalemegency.utils.Prefs;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,11 +32,25 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.cmpundhir.cm.medicalemegency.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PatientHomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , OnFragmentInteractionListener {
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+    FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+    String currentUserGender;
+    CircleImageView headerimage;
 
-    TextView patName,patEmail;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener monNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -51,7 +65,7 @@ public class PatientHomeActivity extends AppCompatActivity
                     setFragment(DashboardFragment.newInstance("",""));
                     break;
                 case R.id.navigation_notifications:
-                    setFragment(NotificationsFragment.newInstance("",""));
+                    setFragment(NotificationsFragment.newInstance("0","1"));
                     break;
             }
             return true;
@@ -64,16 +78,21 @@ public class PatientHomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_patient_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        patName=findViewById(R.id.patientName);
-
-        patEmail=findViewById(R.id.patientEmail);
 
 
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
 
         View headerView=navigationView.getHeaderView(0);
+        TextView patName,patEmail;
+        headerimage=headerView.findViewById(R.id.imageView1);
+        patName = headerView.findViewById(R.id.pat_name);
+        patEmail=headerView.findViewById(R.id.pat_email);
+        patName.setText(firebaseUser.getDisplayName());
+        patEmail.setText(firebaseUser.getEmail());
 
 
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottomViewPateint);
@@ -86,6 +105,26 @@ public class PatientHomeActivity extends AppCompatActivity
         Prefs.init(this);
         navigationView.setNavigationItemSelectedListener(this);
         setFragment(HomeFragment.newInstance("",""));
+        queryGender();
+    }
+    public void queryGender(){
+        databaseReference.child("patients").child(firebaseUser.getUid())
+                .child("userGender").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                currentUserGender = dataSnapshot.getValue(String.class);
+                if(currentUserGender.equals("Male")){
+                    headerimage.setImageResource(R.drawable.male);
+                }else{
+                    headerimage.setImageResource(R.drawable.woman);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -126,18 +165,18 @@ public class PatientHomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+       if (id == R.id.nav_prof) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_article) {
+            Intent intent = new Intent(PatientHomeActivity.this, HealthArticles.class);
+            startActivity(intent);
 
-        } else if (id == R.id.nav_tools) {
 
-        } else if (id == R.id.services) {
+        } else if (id == R.id.nav_treatmnt) {
 
-           Intent intent = new Intent(PatientHomeActivity.this,MapActivity.class);
-           startActivity(intent);
+        } else if (id == R.id.nav_diagnsis) {
+
+
 
 
         } else if (id == R.id.nav_pat_logout) {
@@ -146,9 +185,13 @@ public class PatientHomeActivity extends AppCompatActivity
             Intent intent = new Intent(PatientHomeActivity.this, LoginChoiceActivity.class);
             startActivity(intent);
             finish();
+        }else if (id == R.id.services) {
+
+            Intent intent = new Intent(PatientHomeActivity.this, MapActivity.class);
+            startActivity(intent);
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+            DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }

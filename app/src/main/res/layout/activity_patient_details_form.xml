@@ -6,8 +6,7 @@
     android:background="@color/primaryDarkColor"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".PatientDetailsFormActivity">
+    android:gravity="center">
 
     <ImageView
         android:id="@+id/img"
@@ -65,8 +64,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textCapWords|textAutoComplete"
                         android:id="@+id/pat_fname"
-                        android:hint="Father's Name"
+                        android:hint="Enter Father's Name*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -74,8 +74,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textCapWords|textAutoComplete"
                         android:id="@+id/pat_mom"
-                        android:hint="Mother's Name "
+                        android:hint="Enter Mother's Name*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -96,7 +97,7 @@
                             <com.google.android.material.textfield.TextInputEditText
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="Enter your DOB"
+                                android:hint="Enter your DOB(DD/MM/YY)*"
                                 android:id="@+id/pat_dob"/>
                         </com.google.android.material.textfield.TextInputLayout>
 
@@ -120,22 +121,23 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Marital Status :  "
+                        android:text="Marital Status :  *"
                         android:textSize="18dp"
                         android:layout_gravity="center_vertical"/>
                     <RadioGroup
-                        android:id="@+id/marry"
+                        android:id="@+id/marryStatus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:layout_marginLeft="9dp">
                         <RadioButton
+                            android:layout_marginLeft="20dp"
                             android:id="@+id/pat_marr"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Married"/>
                         <RadioButton
-                            android:layout_marginLeft="12dp"
+                            android:layout_marginLeft="20dp"
                             android:id="@+id/pat_unmarried"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -150,7 +152,7 @@
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/pat_Nation"
-                        android:hint="Nationality"
+                        android:hint="Enter Nationality*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -161,8 +163,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textCapWords|textAutoComplete"
                         android:id="@+id/pat_langspoken"
-                        android:hint="Language Spoken "
+                        android:hint="Enter Language Spoken"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -172,8 +175,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textCapWords|textAutoComplete"
                         android:id="@+id/pat_medHistory"
-                        android:hint="Past Medical History  "
+                        android:hint="Enter Past Medical History*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -182,8 +186,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textCapWords|textAutoComplete"
                         android:id="@+id/pat_blood"
-                        android:hint="Blood Group "
+                        android:hint="Enter Blood Group*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -193,7 +198,7 @@
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/pat_height"
-                        android:hint="Height "
+                        android:hint="Enter Height in (Inch)"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -204,7 +209,7 @@
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/pat_weigh"
-                        android:hint="Weight  "
+                        android:hint="Enter your Weight*  "
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -213,8 +218,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.google.android.material.textfield.TextInputEditText
+                        android:inputType="textCapWords|textAutoComplete"
                         android:id="@+id/pat_notes"
-                        android:hint="Clinical Notes  "
+                        android:hint="Enter Clinical Notes*"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -240,7 +246,8 @@
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/pat_flat"
-                            android:hint="Flat No. And BLDG. Name  "
+                            android:inputType="textCapWords|textAutoComplete"
+                            android:hint="Flat No. And BLDG. Name*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -250,7 +257,8 @@
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/pat_road"
-                            android:hint="Road No./Name  "
+                            android:inputType="textCapWords|textAutoComplete"
+                            android:hint="Road No./Name*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -260,7 +268,8 @@
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/pat_Locality"
-                            android:hint="Area / Locality "
+                            android:hint="Area / Locality* "
+                            android:inputType="textCapWords|textAutoComplete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -270,7 +279,8 @@
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/pat_city"
-                            android:hint="City "
+                            android:hint="Enter current City* "
+                            android:inputType="textCapWords|textAutoComplete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -280,7 +290,8 @@
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/pat_state"
-                            android:hint="State"
+                            android:hint="Enter  State*"
+                            android:inputType="textCapWords|textAutoComplete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -290,7 +301,8 @@
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/pat_country"
-                            android:hint="Country "
+                            android:hint="Enter your Country*"
+                            android:inputType="textCapWords|textAutoComplete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -300,7 +312,7 @@
                         android:layout_height="wrap_content">
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/pat_pin"
-                            android:hint="Pin Code"
+                            android:hint="Enter Pin Code*"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
                     </com.google.android.material.textfield.TextInputLayout>
@@ -321,7 +333,7 @@
     </androidx.cardview.widget.CardView>
     <ProgressBar
         android:visibility="gone"
-        android:id="@+id/progressbarPat"
+        android:id="@+id/progressbarPatDetails"
         android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

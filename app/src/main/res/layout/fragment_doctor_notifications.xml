@@ -2,14 +2,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cmpundhir.bottom_doctor_fragments.DoctorNotificationsFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    tools:context="com.cmpundhir.cm.bottom_doctor_fragments.DoctorNotificationsFragment">
+    <RelativeLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Doctor Notifications"
-        android:textSize="20dp"
-        android:gravity="center" />
+        android:layout_height="match_parent">
 
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:paddingEnd="16dp"
+            android:paddingRight="16dp"
+            android:paddingStart="16dp"
+            android:paddingLeft="16dp"
+            android:paddingTop="8dp"
+            android:gravity="center"
+            android:background="@drawable/med_col_blue"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ProgressBar
+                android:visibility="gone"
+               android:progressTint="@color/white"
+                android:id="@+id/progressbar_docNoti"
+                android:layout_centerInParent="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:textColorHint="@color/white"
+                android:background="@drawable/edit_style"
+                android:id="@+id/title"
+                android:hint="Title"
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:textColorHint="@color/white"
+                android:background="@drawable/edit_style"
+                android:id="@+id/descript"
+                android:hint="Description"
+                android:layout_marginTop="16dp"
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+
+            <Button
+                android:backgroundTint="#1E88E5"
+                android:fontFamily="@font/modern_antiqua"
+                android:id="@+id/btnSendNotiDoc"
+                android:text="Send to Patient"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+               android:textSize="15dp"
+                android:textColor="@color/white"
+                android:background="@drawable/art_btn"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="45dp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layoutDirection="inherit"
+            android:textStyle="bold"
+            android:layout_margin="20dp"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:fontFamily=""
+            android:textColor="@color/white"
+            android:text="Send  Prescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <View
+            android:layout_below="@id/txt1"
+            android:background="#CCE7E7"
+            android:layout_width="450dp"
+            android:layout_height="2dp"/>
+
+
+
+    </RelativeLayout>
 </FrameLayout>
